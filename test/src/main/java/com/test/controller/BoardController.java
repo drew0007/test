@@ -26,13 +26,13 @@ public class BoardController
 	public ModelAndView getBoardList() throws Exception{
 		List<BoardVO> list = boardService.getBoardList();
 		
-		return new ModelAndView("boardList", "list", list);
+		return new ModelAndView("board/getBoardList", "list", list);
 	}
 	
 	//게시글 작성 페이지
 	@RequestMapping(value="/post", method=RequestMethod.GET)
 	public ModelAndView addBoard() throws Exception{
-		return new ModelAndView("boardWrite");
+		return new ModelAndView("board/addBoard");
 	}
 	
 	//게시글 작성
@@ -49,7 +49,7 @@ public class BoardController
 		boardService.hitPlus(bno);
 		BoardVO board =  boardService.getBoard(bno);
 		
-		return new ModelAndView("boardView", "board", board);
+		return new ModelAndView("board/getBoard", "board", board);
 	}
 	
 	//게시글 수정 페이지
@@ -57,7 +57,7 @@ public class BoardController
 	public ModelAndView updateBoard(@PathVariable("bno") int bno) throws Exception{
 		BoardVO board = boardService.getBoard(bno);
 		
-		return new ModelAndView("boardUpdate", "board", board);
+		return new ModelAndView("board/updateBoard", "board", board);
 	}
 	
 	//게시글 수정

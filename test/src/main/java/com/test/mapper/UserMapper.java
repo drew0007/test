@@ -8,4 +8,6 @@ import com.test.domain.UserVO;
 public interface UserMapper
 {
 	public UserVO getUser(String userId);
+	
+	public void addUser(UserVO user) throws Exception;
 }

@@ -28,7 +28,7 @@ public class UserRestController
 	@Autowired
 	AuthenticationManager authenticationManager;
 	
-	@RequestMapping(value="/login", method=RequestMethod.POST)
+/*	@RequestMapping(value="/login", method=RequestMethod.POST)
 	public String login(@ModelAttribute("AuthenticationRequest")  AuthenticationRequest authenticationRequest, HttpSession session) throws Exception {
 
 		String userId = authenticationRequest.getUserId();
@@ -54,5 +54,5 @@ public class UserRestController
 		System.out.println("#####################");
 		
 		return user.toString();
-	}
+	}*/
 }

@@ -8,4 +8,6 @@ import com.test.domain.UserVO;
 public interface UserService extends UserDetailsService
 {
 	public UserVO getUser(String userId) throws Exception;
+	
+	public void addUser(UserVO user) throws Exception;
 }

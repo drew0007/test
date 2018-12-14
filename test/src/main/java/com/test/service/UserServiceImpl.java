@@ -23,6 +23,12 @@ public class UserServiceImpl implements UserService
 	}
 	
 	@Override
+	public void addUser(UserVO user) throws Exception
+	{
+		userMapper.addUser(user);
+	}
+	
+	@Override
 	public UserDetails loadUserByUsername(String userId) throws UsernameNotFoundException
 	{
 		UserVO user = userMapper.getUser(userId);

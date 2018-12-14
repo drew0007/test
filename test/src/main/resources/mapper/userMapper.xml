@@ -9,5 +9,10 @@
 		FROM users
 		WHERE user_id = #{userId}	
 	</select>
+	
+	<insert id="addUser" parameterType="com.test.domain.UserVO">
+		INSERT INTO users(user_id, pw)
+		VALUES(#{userId}, #{pw})
+	</insert>
 
 </mapper>
