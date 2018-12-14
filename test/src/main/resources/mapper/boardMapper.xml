@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.test.mapper.BoardMapper">
+
+	<insert id="addBoard" parameterType="com.test.domain.BoardVO">
+		INSERT INTO board_pro
+		VALUES (#{bno}, #{subject}, #{content}, #{writer}, now(), 0)
+	</insert>
+	
+	<select id="getBoardList" resultType="com.test.domain.BoardVO">
+		SELECT * 
+		FROM board_pro
+	</select>
+	
+	<select id="getBoard" parameterType="int" resultType="com.test.domain.BoardVO">
+		SELECT *
+		FROM board_pro
+		WHERE bno = #{bno}
+	</select>
+	
+	<update id="hitPlus" parameterType="int">
+		UPDATE board_pro
+		SET hit = hit+1
+		WHERE bno = #{bno}
+	</update>
+	
+	<update id="updateBoard" parameterType="com.test.domain.BoardVO">
+		UPDATE board_pro
+		SET subject = #{subject},
+			content = #{content}
+		WHERE bno = #{bno}
+	</update>
+	
+	<delete id="deleteBoard" parameterType="int">
+		DELETE FROM board_pro
+		WHERE bno = #{bno}
+	</delete>
+
+</mapper>
